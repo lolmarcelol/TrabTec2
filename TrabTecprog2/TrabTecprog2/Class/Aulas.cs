@@ -16,10 +16,10 @@ namespace TrabTecprog2.Class
             TotalHA = totalHA;
             TotalHR = totalHR;
         }
-        public int AulasTeoricas { get; set; }
-        public int AulasPraticas { get; set; }
-        public int Creditos { get; set; }
-        public int TotalHA { get; set; }
-        public int TotalHR { get; set; }
+        public virtual int AulasTeoricas { get; set; }
+        public virtual int AulasPraticas { get; set; }
+        public virtual int Creditos { get; set; }
+        public virtual int TotalHA { get; set; }
+        public virtual int TotalHR { get; set; }
     }
 }

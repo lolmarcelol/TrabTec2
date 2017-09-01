@@ -40,10 +40,12 @@ namespace TrabTecprog2
 
             List<Periodo> periodos = new List<Periodo>();
             periodos.Add(p);
-            periodos.Add(p2);
             Curso c = new Curso(1,"BSI",0,0,0,0,0);
             c.Periodos = periodos;
             c.Imprimir();
+            c.Periodos.Add(p2);
+            c.Imprimir();
+
             Console.Read();
         }
     }

@@ -14,26 +14,77 @@ namespace TrabTecprog2.Class
             Id = id;
         }
         public int Id { get; set; }
-        private IEnumerable<Disciplina> _Disciplinas;
-        public IEnumerable<Disciplina> Disciplinas
+        public List<Disciplina> Disciplinas { get; set; }
+        public override int AulasPraticas
         {
             get
             {
-                return this._Disciplinas;
-            }
-            set
-            {
-                this._Disciplinas = value;
-                foreach (Disciplina d in value)
+                int somatorio = 0;
+                foreach (Disciplina p in Disciplinas)
                 {
-                    AulasPraticas += d.AulasPraticas;
-                    AulasTeoricas += d.AulasTeoricas;
-                    Creditos += d.Creditos;
-                    TotalHA += d.TotalHA;
-                    TotalHR += d.TotalHR;
+                    somatorio += p.AulasPraticas;
                 }
+                return somatorio;
             }
+
         }
+
+        public override int AulasTeoricas
+        {
+            get
+            {
+                int somatorio = 0;
+                foreach (Disciplina p in Disciplinas)
+                {
+                    somatorio += p.AulasTeoricas;
+                }
+                return somatorio;
+            }
+
+        }
+
+        public override int Creditos
+        {
+            get
+            {
+                int somatorio = 0;
+                foreach (Disciplina p in Disciplinas)
+                {
+                    somatorio += p.Creditos;
+                }
+                return somatorio;
+            }
+
+        }
+
+        public override int TotalHA
+        {
+            get
+            {
+                int somatorio = 0;
+                foreach (Disciplina p in Disciplinas)
+                {
+                    somatorio += p.TotalHA;
+                }
+                return somatorio;
+            }
+
+        }
+        public override int TotalHR
+        {
+            get
+            {
+                int somatorio = 0;
+                foreach (Disciplina p in Disciplinas)
+                {
+                    somatorio += p.TotalHR;
+                }
+                return somatorio;
+            }
+
+        }
+
+
 
         public void Imprimir()
         {

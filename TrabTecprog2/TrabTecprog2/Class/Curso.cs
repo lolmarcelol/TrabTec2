@@ -17,27 +17,77 @@ namespace TrabTecprog2.Class
 
         public int Id { get; set; }
         public string Nome { get; set; }
-        // conjunto periodos
-        private IEnumerable<Periodo> _Periodos;
-        public IEnumerable<Periodo> Periodos
+
+        public override int AulasPraticas
         {
             get
             {
-                return this._Periodos;
-            }
-            set
-            {
-                this._Periodos = value;
-                foreach (Periodo p in value)
+                int somatorio = 0;
+                foreach (Periodo p in Periodos)
                 {
-                    AulasPraticas += p.AulasPraticas;
-                    AulasTeoricas += p.AulasTeoricas;
-                    Creditos += p.Creditos;
-                    TotalHA += p.TotalHA;
-                    TotalHR += p.TotalHR;
+                    somatorio += p.AulasPraticas;
                 }
+                return somatorio;
             }
+
         }
+
+        public override int AulasTeoricas
+        {
+            get
+            {
+                int somatorio = 0;
+                foreach (Periodo p in Periodos)
+                {
+                    somatorio += p.AulasTeoricas;
+                }
+                return somatorio;
+            }
+                
+        }
+
+        public override int Creditos
+        {
+            get
+            {
+                int somatorio = 0;
+                foreach (Periodo p in Periodos)
+                {
+                    somatorio += p.Creditos;
+                }
+                return somatorio;
+            }
+
+        }
+
+        public override int TotalHA
+        {
+            get
+            {
+                int somatorio = 0;
+                foreach (Periodo p in Periodos)
+                {
+                    somatorio += p.TotalHA;
+                }
+                return somatorio;
+            }
+
+        }
+        public override int TotalHR
+        {
+            get
+            {
+                int somatorio = 0;
+                foreach (Periodo p in Periodos)
+                {
+                    somatorio += p.TotalHR;
+                }
+                return somatorio;
+            }
+
+        }
+
+        public List<Periodo> Periodos { get; set; }
 
         public void Imprimir()
         {
