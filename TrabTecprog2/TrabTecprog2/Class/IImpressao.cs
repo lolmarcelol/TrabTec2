@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrabTecprog2
+namespace TrabTecprog2.Class
 {
-    class Program
+    interface IImpressao
     {
-        static void Main(string[] args)
-        {
-        }
+        void Imprimir();
+
     }
 }
