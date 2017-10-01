@@ -46,6 +46,7 @@
     <Compile Include="Class\Curso.cs" />
     <Compile Include="Class\Disciplina.cs" />
     <Compile Include="Class\Aulas.cs" />
+    <Compile Include="Class\HREventArgs.cs" />
     <Compile Include="Class\IImpressao.cs" />
     <Compile Include="Class\Periodo.cs" />
     <Compile Include="Class\Program.cs" />

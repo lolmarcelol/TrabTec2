@@ -17,7 +17,25 @@ namespace TrabTecprog2.Class
         public int Codigo { get; set; }
         public string Nome { get; set; }
         public IEnumerable<Disciplina> PreRequisitos { get; set; }
+        public event EventHandler HRMudou;
 
+        public override int TotalHR
+        {
+            get
+            {
+                return base.TotalHR;
+            }
+
+            set
+            {
+                if (HRMudou != null)
+                {
+                    HREventArgs valor = new HREventArgs(TotalHR,value,Nome);
+                    HRMudou(this, valor);
+                }
+                base.TotalHR = value;
+            }
+        }
         //codigo, nome,aulasPraticas, aulasTeoricas, creditos, totalHA, totalHR
         public void Imprimir()
         {

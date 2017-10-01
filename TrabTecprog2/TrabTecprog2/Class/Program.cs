@@ -17,6 +17,7 @@ namespace TrabTecprog2
             //TODO: LOGICA PARA ADICIONAR AS PARADAS PELO MAIN
             //TODO: EXCEPTIONS PARA TIPO DE DADOS
             //TODO: FAZER AS PARADA DE TXT E XML
+            //DONE: Fazer a logica de evento de disciplina
 
             //codigo, nome,aulasPraticas, aulasTeoricas, creditos, totalHA, totalHR
             Disciplina d = new Disciplina(1,"tecprog1",30,30,20,60,100);
@@ -26,6 +27,13 @@ namespace TrabTecprog2
 
             Periodo p = new Periodo(1,0,0,0,0,0);
             Periodo p2 = new Periodo(2, 0, 0, 0, 0, 0);
+
+            Curso c = new Curso(1, "BSI", 0, 0, 0, 0, 0);
+
+            d.HRMudou += c.AssinanteHR;
+            d2.HRMudou += c.AssinanteHR;
+            d3.HRMudou += c.AssinanteHR;
+            d4.HRMudou += c.AssinanteHR;
 
             List<Disciplina> pr1 = new List<Disciplina>();
             List<Disciplina> pr2 = new List<Disciplina>();
@@ -40,12 +48,13 @@ namespace TrabTecprog2
 
             List<Periodo> periodos = new List<Periodo>();
             periodos.Add(p);
-            Curso c = new Curso(1,"BSI",0,0,0,0,0);
+            
             c.Periodos = periodos;
             c.Imprimir();
             c.Periodos.Add(p2);
             c.Imprimir();
 
+            d.TotalHR = 20;
             Console.Read();
         }
     }

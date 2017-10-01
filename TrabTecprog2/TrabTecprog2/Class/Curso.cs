@@ -18,6 +18,16 @@ namespace TrabTecprog2.Class
         public int Id { get; set; }
         public string Nome { get; set; }
 
+        public void AssinanteHR(object remetente, EventArgs valores)
+        {
+            if (valores is HREventArgs)
+            {
+                HREventArgs arg = (HREventArgs)valores;
+                //“A disciplina XXXXX teve sua carga horária modificada de Y para Z”
+                Console.WriteLine("A disciplina " + arg.nome + " teve sua carga horária modificada de " + arg.hrAntes + " para " + arg.hrDepois);
+            }
+        }
+
         public override int AulasPraticas
         {
             get
