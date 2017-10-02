@@ -13,6 +13,7 @@ namespace TrabTecprog2.Class
         {
             Id = id;
             Nome = nome;
+            Periodos = new List<Periodo>();
         }
 
         public int Id { get; set; }
@@ -117,10 +118,10 @@ namespace TrabTecprog2.Class
             {
                 foreach (Periodo d in Periodos)
                 {
-                    Console.WriteLine("_____ PERÍODOS COM MATERIAS E SEUS PRE REQUISITOS _____");
+                    Console.WriteLine("_____ PERÍODOS COM MATERIAS E SEUS PRE REQUISITOS _____\n");
                     d.Imprimir();
                 }
-                Console.WriteLine("_____ FIM DOS PERIODOS COM MATERIAS E SEUS PRE REQUISITOS _____");
+                Console.WriteLine("_____ FIM DOS PERIODOS COM MATERIAS E SEUS PRE REQUISITOS _____\n");
 
             }
         }

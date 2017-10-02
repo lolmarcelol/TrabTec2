@@ -13,10 +13,11 @@ namespace TrabTecprog2.Class
         {
             Codigo = codigo;
             Nome = nome;
+            PreRequisitos = new List<Disciplina>();
         }
         public int Codigo { get; set; }
         public string Nome { get; set; }
-        public IEnumerable<Disciplina> PreRequisitos { get; set; }
+        public List<Disciplina> PreRequisitos { get; set; }
         public event EventHandler HRMudou;
 
         public override int TotalHR
@@ -54,10 +55,10 @@ namespace TrabTecprog2.Class
             {
             foreach (Disciplina d in PreRequisitos)
                 {
-                    Console.WriteLine("_____PRÉ REQUISITOS _____");
+                    Console.WriteLine("_____PRÉ REQUISITOS _____\n");
                     d.Imprimir();
                 }
-                Console.WriteLine("_____ FIM DOS PRÉ REQUISITOS _____");
+                Console.WriteLine("_____ FIM DOS PRÉ REQUISITOS _____ \n");
 
             }
 

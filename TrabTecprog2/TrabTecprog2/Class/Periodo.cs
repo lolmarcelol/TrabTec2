@@ -8,12 +8,15 @@ namespace TrabTecprog2.Class
 {
     class Periodo : Aulas, IImpressao
     {
-        public Periodo(int id, int aulasPraticas, int aulasTeoricas, int creditos, int totalHA, int totalHR)
+        public Periodo(int id, int aulasPraticas, int aulasTeoricas, int creditos, int totalHA, int totalHR, int periodo)
             : base(aulasPraticas, aulasTeoricas, creditos, totalHA, totalHR)
         {
             Id = id;
+            this.periodo = periodo;
+            Disciplinas = new List<Disciplina>();
         }
         public int Id { get; set; }
+        public int periodo { get; set; }
         public List<Disciplina> Disciplinas { get; set; }
         public override int AulasPraticas
         {
@@ -103,10 +106,10 @@ namespace TrabTecprog2.Class
             {
                 foreach (Disciplina d in Disciplinas)
                 {
-                    Console.WriteLine("_____ DISCIPLINAS E SEUS PRÉ REQUISITOS _____");
+                    Console.WriteLine("_____ DISCIPLINAS E SEUS PRÉ REQUISITOS _____\n");
                     d.Imprimir();
                 }
-                Console.WriteLine("_____ FIM DAS DISCIPLINAS _____");
+                Console.WriteLine("_____ FIM DAS DISCIPLINAS _____\n");
             }
         }
     }
